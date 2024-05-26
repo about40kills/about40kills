@@ -1,4 +1,6 @@
 ## Hi there 👋
+I'm Davis.I'm a newbie software developer with the desire to learn more and create new things.
+I'm currently learning HTML,CSS and Javascript.I'm currently working on a responsive website.
 
 <!--
 **about40kills/about40kills** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
