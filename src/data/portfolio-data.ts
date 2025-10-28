@@ -3,7 +3,7 @@ export const portfolioData = {
   title: "Software Developer",
   description:
     "Passionate about building innovative solutions with modern technologies",
-  email: "contact@davisopoku.dev",
+  email: "opokudavis141@gmail.com",
   github: "https://github.com/about40kills",
   linkedin: "https://linkedin.com/in/davis-opoku-b3605521a",
 
@@ -16,14 +16,14 @@ export const portfolioData = {
       "Machine Learning",
     ],
     description:
-      "I build exceptional digital experiences with a focus on computer vision, web development, and creating efficient solutions.",
+      "I build exceptional digital experiences with a focus on computer vision, web development, Machine Learning, and creating efficient solutions.",
   },
 
   about: {
     title: "About Me",
     description:
       "I'm a software developer with expertise in Python, JavaScript, and modern web technologies. I specialize in computer vision, real-time object detection, and software development. I'm also passionate about creating efficient, user-friendly applications that solve real-world problems with machine learning.",
-    image: "https://github.com/about40kills.png",
+    image: "/assets/profile.jpg",
   },
 
   skills: [
@@ -36,6 +36,7 @@ export const portfolioData = {
     { name: "Tailwind CSS", category: "Frontend" },
     { name: "OpenCV", category: "Computer Vision" },
     { name: "YOLOX", category: "Computer Vision" },
+    { name: "Ultralytics", category: "Computer Vision" },
     { name: "MongoDB", category: "Database" },
     { name: "Git", category: "Tools" },
     { name: "Github", category: "Tools" },
@@ -53,7 +54,8 @@ export const portfolioData = {
       title: "Real Time Object Detection",
       description:
         "Python project for detecting moving objects in real-time using computer vision techniques. Implements advanced algorithms for tracking and annotating objects in video streams.",
-      image: "/projects/object-detection.jpg",
+      image:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJsBZckNwc_TNETVr2HUndXxi1I4HxE8Aevg&s",
       technologies: ["Python", "OpenCV", "Computer Vision"],
       github:
         "https://github.com/about40kills/RealTimeObjectDetectionAndAnnotation",
@@ -63,7 +65,8 @@ export const portfolioData = {
       title: "Real Time Face Blurring",
       description:
         "Privacy-focused application that blurs faces in real-time video streams. Uses facial recognition to protect identity in live video feeds.",
-      image: "/projects/face-blur.jpg",
+      image:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_2qMqR8W_iXd8iM_S1kcACfhrsmU5QiF8GA&s",
       technologies: ["Python", "OpenCV", "Privacy"],
       github: "https://github.com/about40kills/RealTimeFaceBlurring",
       demo: "",
@@ -72,7 +75,7 @@ export const portfolioData = {
       title: "EventHive",
       description:
         "A comprehensive event management platform for creating, discovering, and managing events. Features user authentication, event creation, RSVP tracking, and real-time updates.",
-      image: "/projects/eventhive.jpg",
+      image: "/assets/Eventhive.png",
       technologies: ["React", "Node.js", "MongoDB"],
       github: "https://github.com/about40kills/EventHive",
       demo: "",
@@ -81,7 +84,8 @@ export const portfolioData = {
       title: "Object Detection with YOLOX",
       description:
         "Advanced object detection system implementing YOLOX architecture for fast and accurate real-time detection. Optimized for high-performance inference.",
-      image: "/projects/yolox.jpg",
+      image:
+        "https://media.istockphoto.com/id/1437265379/photo/traffic-monitoring-by-ai-security-system.webp?a=1&b=1&s=612x612&w=0&k=20&c=vnhotgeoNWNcUNlTl5w5c-kSGvw07WzNLRwxFOpVBMs=",
       technologies: ["Python", "YOLOX", "Deep Learning"],
       github: "https://github.com/about40kills/ObjectDetectYolox",
       demo: "",
@@ -90,7 +94,7 @@ export const portfolioData = {
       title: "SmartCV Analyzer/Generator",
       description:
         "A modern web application for analyzing CVs and generating detailed reports with PDF export functionality.",
-      image: "/projects/cv-analyzer.jpg",
+      image: "/assets/SmartCV.png",
       technologies: ["HTML", "CSS", "JavaScript"],
       github: "https://github.com/about40kills/cv-analyzer-generator",
       demo: "",
@@ -101,6 +105,6 @@ export const portfolioData = {
     title: "Get In Touch",
     description:
       "I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.",
-    email: "contact@davisopoku.dev",
+    email: "opokudavis141@gmail.com",
   },
 };

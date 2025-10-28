@@ -15,7 +15,19 @@ export function Projects() {
                             className="bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow group"
                         >
                             <div className="relative h-48 bg-gradient-to-br from-gray-800 to-gray-950 dark:from-gray-100 dark:to-gray-300 overflow-hidden">
-                                <div className="absolute inset-0 flex items-center justify-center text-white dark:text-gray-900 text-6xl font-bold opacity-20">
+                                {project.image ? (
+                                    <img
+                                        src={project.image}
+                                        alt={project.title}
+                                        className="w-full h-full object-cover"
+                                        onError={(e) => {
+                                            e.currentTarget.style.display = 'none';
+                                            const fallback = e.currentTarget.nextElementSibling;
+                                            if (fallback) fallback.classList.remove('hidden');
+                                        }}
+                                    />
+                                ) : null}
+                                <div className={`absolute inset-0 flex items-center justify-center text-white dark:text-gray-900 text-6xl font-bold opacity-20 ${project.image ? 'hidden' : ''}`}>
                                     {project.title.charAt(0)}
                                 </div>
                             </div>
