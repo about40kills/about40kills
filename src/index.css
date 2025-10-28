@@ -1,0 +1,47 @@
+@font-face {
+  font-family: 'Game of Squids';
+  src: url('/public/fonts/Game\ Of\ Squids.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-gray-200 dark:border-gray-800;
+  }
+  
+  body {
+    @apply bg-white text-gray-950 dark:bg-gray-950 dark:text-gray-50;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-in;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .squid-game-font {
+    font-family: 'Game of Squids', cursive;
+    letter-spacing: 0.1em;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.1);
+  }
+}
