@@ -308,13 +308,13 @@ export function Resume() {
                         <h2 className="text-xl font-bold">Education</h2>
                         {RESUME_DATA.education.map((education) => (
                             <div key={education.school + education.start} className="rounded-lg border border-gray-200 dark:border-gray-800 p-4">
-                                <div className="flex items-start justify-between gap-x-2 text-base mb-2">
+                                <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 text-base mb-2">
                                     <div className="flex-1">
                                         <h3 className="font-semibold leading-none mb-1">{education.school}</h3>
                                         <p className="text-sm text-gray-600 dark:text-gray-400 mb-1">{education.location}</p>
                                         <p className="text-sm text-gray-600 dark:text-gray-400">{education.degree}</p>
                                     </div>
-                                    <div className="text-sm tabular-nums text-gray-500 whitespace-nowrap">
+                                    <div className="text-sm tabular-nums text-gray-500 sm:whitespace-nowrap">
                                         {education.start} - {education.end}
                                     </div>
                                 </div>
@@ -327,9 +327,9 @@ export function Resume() {
                         <h2 className="text-xl font-bold">Work Experience</h2>
                         {RESUME_DATA.work.map((work, index) => (
                             <div key={work.company + work.start + index} className="rounded-lg border border-gray-200 dark:border-gray-800 p-4">
-                                <div className="flex items-start justify-between gap-x-2 text-base mb-2">
-                                    <div className="flex-1">
-                                        <h3 className="inline-flex items-center justify-start gap-x-2 font-semibold leading-none mb-1">
+                                <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 text-base mb-2">
+                                    <div className="flex-1 min-w-0">
+                                        <h3 className="flex flex-wrap items-center gap-2 font-semibold leading-none mb-1">
                                             <span>{work.company}</span>
                                             {work.badges.map((badge) => (
                                                 <span key={badge} className="inline-flex items-center rounded-full bg-gray-100 dark:bg-gray-800 px-2 py-1 text-xs">
@@ -340,7 +340,7 @@ export function Resume() {
                                         <p className="text-sm text-gray-600 dark:text-gray-400 mb-1">{work.location}</p>
                                         <h4 className="font-mono text-sm leading-none mb-2">{work.title}</h4>
                                     </div>
-                                    <div className="text-sm tabular-nums text-gray-500 whitespace-nowrap">
+                                    <div className="text-sm tabular-nums text-gray-500 sm:whitespace-nowrap">
                                         {work.start} - {work.end ?? 'Present'}
                                     </div>
                                 </div>
