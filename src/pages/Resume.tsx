@@ -62,7 +62,7 @@ const RESUME_DATA = {
             badges: ["Technical Intern"],
             title: "Technical Intern",
             start: "October 2024",
-            end: null,
+            end: "Present / Part-time",
             description: [
                 "Supervised and assisted in phone repairs, diagnosing hardware and software issues for Apple devices, improving repairs turnaround time by about 30%.",
                 "Performed software installations and updates, ensuring optimal device performance and customer satisfaction."
@@ -178,7 +178,11 @@ const RESUME_DATA = {
         {
             title: "SHUTTLE APP",
             techStack: ["Mobile", "Web App", "Collaboration"],
-            description: "A mobile/web app to help students and shuttle drivers of KNUST for convenient shuttle services. Collaboration with Prince Essandoh and Vincent Kpemlie.",
+            description: (
+                <>
+                    A mobile/web app to help students and shuttle drivers of KNUST for convenient shuttle services. Collaboration with <a href="https://github.com/alpha0316" target="_blank" rel="noopener noreferrer" className="hover:underline">Prince Essandoh</a> and <a href="https://github.com/thelocalgodd" target="_blank" rel="noopener noreferrer" className="hover:underline">Vincent Kpemlie</a>.
+                </>
+            ),
             link: {
                 href: "#",
             },
