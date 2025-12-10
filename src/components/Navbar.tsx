@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useTheme } from '../hooks/useTheme';
 import { Moon, Sun, Menu, X } from 'lucide-react';
+import { NowPlaying } from './NowPlaying';
 
 export function Navbar() {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -49,6 +50,7 @@ export function Navbar() {
                                 {link.name}
                             </a>
                         ))}
+                        <NowPlaying />
                         <button
                             onClick={toggleTheme}
                             className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
