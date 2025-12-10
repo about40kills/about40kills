@@ -5,7 +5,28 @@ const supabaseUrl = process.env.VITE_SUPABASE_URL;
 const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
 
 export const handler: Handler = async (event) => {
-    // Only allow POST requests
+    // Handle CORS preflight requests
+    if (event.httpMethod === 'OPTIONS') {
+        return {
+            statusCode: 200,
+            headers: {
+                'Access-Control-Allow-Origin': '*',
+                'Access-Control-Allow-Headers': 'Content-Type',
+                'Access-Control-Allow-Methods': 'POST, GET, OPTIONS',
+            },
+            body: '',
+        };
+    }
+
+    // Allow GET requests for verification checks
+    if (event.httpMethod === 'GET') {
+        return {
+            statusCode: 200,
+            body: 'Webhook endpoint is active',
+        };
+    }
+
+    // Only allow POST requests for actual data
     if (event.httpMethod !== 'POST') {
         return { statusCode: 405, body: 'Method Not Allowed' };
     }
