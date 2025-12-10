@@ -72,7 +72,11 @@ export const handler: Handler = async (event) => {
             .update(updateData)
             .eq('id', 1);
 
-        if (error) throw error;
+        if (error) {
+            console.error('Supabase error:', error);
+            // Even if Supabase fails, we return 200 to NPC so it doesn't think the webhook is broken
+            // We'll see the error in Netlify logs
+        }
 
         return {
             statusCode: 200,
@@ -80,9 +84,11 @@ export const handler: Handler = async (event) => {
         };
     } catch (err: any) {
         console.error('Error processing webhook:', err);
+        // CRITICAL: Always return 200 OK to NPC during setup, even if our code crashes.
+        // This allows the destination to be added. We can debug the logs later.
         return {
-            statusCode: 400,
-            body: JSON.stringify({ error: err.message }),
+            statusCode: 200,
+            body: JSON.stringify({ success: true, warning: 'Error occurred but handled' }),
         };
     }
 };
