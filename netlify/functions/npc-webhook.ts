@@ -39,17 +39,30 @@ export const handler: Handler = async (event) => {
     const supabase = createClient(supabaseUrl, supabaseServiceKey);
 
     try {
-        const payload = JSON.parse(event.body || '{}');
-        console.log('Received payload:', payload);
+        console.log('Raw event body:', event.body);
+
+        // Parse payload - handle if it's already an object or a string
+        let body;
+        if (typeof event.body === 'object' && event.body !== null) {
+            body = event.body;
+        } else {
+            body = JSON.parse(event.body || '{}');
+        }
+
+        console.log('Parsed body:', body);
+
+        // NPC sends data in a nested 'payload' object
+        // Structure: { "event": "media.update", "payload": { ... } }
+        const data = body.payload || body;
 
         // Map the payload from npc.aikins.xyz to our table structure
         // Adjust these fields based on the actual payload structure you receive
         const updateData = {
-            is_playing: payload.isPlaying ?? true,
-            title: payload.song || payload.title,
-            artist: payload.artist,
-            album_art_url: payload.albumArt || payload.image,
-            url: payload.url || payload.link,
+            is_playing: data.isPlaying ?? true,
+            title: data.song || data.title || data.track,
+            artist: data.artist,
+            album_art_url: data.albumArt || data.image || data.cover,
+            url: data.url || data.link || data.uri,
             updated_at: new Date().toISOString(),
         };
 
