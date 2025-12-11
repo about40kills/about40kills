@@ -32,13 +32,35 @@ export function About() {
                         </div>
                     </div>
                     <div className="order-1 md:order-2 flex justify-center">
-                        <div className="relative">
-                            <div className="absolute inset-0 bg-gray-900 dark:bg-white rounded-lg transform rotate-6"></div>
-                            <img
-                                src={portfolioData.about.image}
-                                alt={portfolioData.name}
-                                className="relative rounded-lg w-64 h-64 md:w-80 md:h-80 object-cover shadow-xl"
-                            />
+                        <div className="relative group perspective-1000 w-64 h-64 md:w-80 md:h-80">
+                            <div className="absolute inset-0 bg-gray-900 dark:bg-white rounded-lg transform rotate-6 transition-transform group-hover:rotate-12"></div>
+
+                            <div className="relative w-full h-full transition-transform duration-700 transform-style-3d group-hover:rotate-y-180">
+                                {/* Front Face: Profile Image */}
+                                <div className="absolute inset-0 backface-hidden">
+                                    <img
+                                        src={portfolioData.about.image}
+                                        alt={portfolioData.name}
+                                        className="rounded-lg w-full h-full object-cover shadow-xl"
+                                    />
+                                </div>
+
+                                {/* Back Face: NPC Card */}
+                                <div className="absolute inset-0 backface-hidden rotate-y-180 bg-gray-900 rounded-lg overflow-hidden shadow-xl flex items-center justify-center">
+                                    <a
+                                        href="https://npc.aikins.xyz/about40kills"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="w-full h-full"
+                                    >
+                                        <img
+                                            src="https://npc-api.aikins.xyz/v1/users/about40kills/card.png?theme=dark&orientation=vertical"
+                                            alt="Now Playing"
+                                            className="w-full h-full object-cover rounded-lg"
+                                        />
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
