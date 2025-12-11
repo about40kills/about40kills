@@ -1,6 +1,9 @@
+import { useState } from 'react';
 import { portfolioData } from '../data/portfolio-data';
 
 export function About() {
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
     return (
         <section id="about" className="py-20 px-4">
             <div className="max-w-6xl mx-auto">
@@ -46,25 +49,48 @@ export function About() {
                                 </div>
 
                                 {/* Back Face: NPC Card */}
-                                <div className="absolute inset-0 backface-hidden rotate-y-180 bg-gray-900 rounded-lg overflow-hidden shadow-xl flex items-center justify-center">
-                                    <a
-                                        href="https://npc.aikins.xyz/about40kills"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="w-full h-full"
-                                    >
+                                <div
+                                    className="absolute left-0 w-full h-[120%] -top-[10%] backface-hidden rotate-y-180 bg-gray-900 rounded-xl overflow-hidden shadow-2xl flex items-center justify-center cursor-pointer z-10"
+                                    onClick={() => setIsModalOpen(true)}
+                                >
+                                    <div className="w-full h-full">
                                         <img
                                             src="https://npc-api.aikins.xyz/v1/users/about40kills/card.png?theme=dark&orientation=vertical"
                                             alt="Now Playing"
                                             className="w-full h-full object-cover rounded-lg"
                                         />
-                                    </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+
+            {/* Modal for Full Size Card */}
+            {
+                isModalOpen && (
+                    <div
+                        className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4 animate-fade-in"
+                        onClick={() => setIsModalOpen(false)}
+                    >
+                        <div className="relative max-w-md w-full transform transition-all scale-100 hover:scale-105">
+                            <button
+                                onClick={() => setIsModalOpen(false)}
+                                className="absolute -top-12 right-0 text-white hover:text-gray-300 transition-colors"
+                            >
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                            </button>
+                            <img
+                                src="https://npc-api.aikins.xyz/v1/users/about40kills/card.png?theme=dark&orientation=vertical"
+                                alt="Now Playing Full"
+                                className="w-full h-auto rounded-2xl shadow-2xl border border-white/10"
+                                onClick={(e) => e.stopPropagation()}
+                            />
+                        </div>
+                    </div>
+                )
+            }
+        </section >
     );
 }
